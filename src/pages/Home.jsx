@@ -20,7 +20,7 @@ export function Home() {
             title: data.title,
             likeCount: data.like,
             imageURL : data.image,
-            dateTime : getDateTime()
+            createdAt : getDateTime()
         }));
     }
 

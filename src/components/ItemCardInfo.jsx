@@ -25,7 +25,7 @@ export function ItemCardInfo({item, onClickRemove,onToggleEdit}) {
                 <div className=" flex flex-col-reverse w-full">
                     <span className="text-[#808080] text-base hidden desktop:block">LIKE : {item.likeCount}</span>
                     <span className="text-white desktop:text-black">{highLightText(item.title,searchParams.get("search"))}</span>
-                    <span className="text-[#808080] text-base">{dateTimeToYYYYMMDD(item.dateTime)}</span>
+                    <span className="text-[#808080] text-base">{dateTimeToYYYYMMDD(item.createdAt)}</span>
                 </div>
                 <div className="desktop:flex justify-center hidden">
                     <Button text="수정" onclick={onToggleEdit} />
