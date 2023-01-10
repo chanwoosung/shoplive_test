@@ -7,6 +7,7 @@ import { Button } from "../components/Button";
 import { ItemCard } from "../components/ItemCard";
 import { TypeCardForm } from "../components/TypeCardForm";
 import { useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
 
 export function Home() {
     // const search = new URLSearchParams(window.location.search).get("search");
@@ -23,9 +24,12 @@ export function Home() {
             createdAt : getDateTime()
         }));
     }
-
-    items = items.filter((card,_) => card.title.indexOf(search.get("search")) !== -1);
-
+    useEffect(()=> {
+        if(search.get("search")!==null) {
+            items = items.filter((card,_) => card.title.indexOf(search.get("search")) !== -1);
+        }
+    },[items])
+    console.log(items);
     return (
         <>
             {/* <DescriptionComponent /> */}
