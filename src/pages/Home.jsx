@@ -13,7 +13,7 @@ export function Home() {
     // const search = new URLSearchParams(window.location.search).get("search");
     const [search,setSearch] = useSearchParams()
     const dispatch = useDispatch();
-    let {item:items} = useSelector(state => state.item)
+    const {item:items} = useSelector(state => state.item)
     
     const onSubmit = data => {
         dispatch(addItem({
